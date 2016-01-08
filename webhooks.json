@@ -1,0 +1,12 @@
+[
+    {
+        "method": "GET",
+        "path": "/hello",
+        "command": "echo hello world"
+    },
+    {
+        "method": ["GET", "POST"],
+        "path": "/hello-again",
+        "command": "echo hello again"
+    }
+]

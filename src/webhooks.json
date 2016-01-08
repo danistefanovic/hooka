@@ -1,0 +1,12 @@
+[
+    {
+        "method": "GET",
+        "path": "/hello",
+        "command": "echo hello world"
+    },
+    {
+        "method": ["GET", "POST"],
+        "path": "/46a60915370143eeba6c7a60be153dd3",
+        "command": "/repos/server/deployment/digitalocean/deploy.sh all /repos/application/docker-compose.yml /repos/application/docker-compose.prod.yml"
+    }
+]
