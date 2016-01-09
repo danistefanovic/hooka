@@ -1,0 +1,5 @@
+{
+    "extends": [
+        "eslint-config-infektweb/configs/es6",
+    ]
+}
