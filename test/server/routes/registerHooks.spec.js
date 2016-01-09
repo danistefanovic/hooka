@@ -19,17 +19,19 @@ describe('registerHooks', () => {
     });
 
     it('should throw an error if no router is provided', () => {
-        const actual = registerHooks.bind(null, null, mockHooks);
+        const params = { hooks: mockHooks };
+        const actual = registerHooks.bind(null, params);
         expect(actual).toThrow();
     });
 
     it('should throw an error if no hooks are provided', () => {
-        const actual = registerHooks.bind(null, mockRouter);
+        const params = { router: mockRouter };
+        const actual = registerHooks.bind(null, params);
         expect(actual).toThrow();
     });
 
     it('should register a hook for every HTTP method', () => {
-        registerHooks(mockRouter, mockHooks);
+        registerHooks({ router: mockRouter, hooks: mockHooks });
         expect(addRoute.calls.count()).toBe(3);
         expect(addRoute.calls.argsFor(0)).toEqual([{
             router: mockRouter,

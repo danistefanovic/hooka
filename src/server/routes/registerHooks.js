@@ -1,6 +1,6 @@
 import runCommand from '../runCommand';
 
-export default function registerHooks(router, hooks) {
+export default function registerHooks({ router, hooks }) {
     if (!router) throw new Error('No router provided');
     if (!hooks) throw new Error('No hooks provided');
 

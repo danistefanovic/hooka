@@ -5,7 +5,7 @@ import webhookServer from '../server';
 export default function run(argv) {
     const config = getConfig(argv.config);
     const app = webhookServer.create();
-    const router = webhookServer.createRouter({ hooks: config });
+    const router = webhookServer.createRouter(config);
     app.use(router);
     app.listen(argv.port, () => {
         displayServerInformation(argv);
@@ -15,10 +15,9 @@ export default function run(argv) {
 function getConfig(relativePath) {
     const configPath = path.resolve(process.cwd(), relativePath);
     fs.accessSync(configPath, (err) => { // eslint-disable-line no-sync
-        if (err) {
-            throw new Error(`Error: webhook config file ${configPath} doesn't exist`);
-        }
+        if (err) throw new Error(`Config file ${configPath} doesn't exist`);
     });
+    return require(configPath);
 }
 
 function displayServerInformation({ port }) {
