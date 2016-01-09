@@ -14,11 +14,13 @@ export default function run(argv) {
 
 function getConfig(relativePath) {
     const configPath = path.resolve(process.cwd(), relativePath);
-    if (fs.existsSync(configPath)) return require(configPath);
-    console.log(`Error: webhook config file ${configPath} doesn't exist`);
-    process.exit(1);
+    fs.accessSync(configPath, (err) => { // eslint-disable-line no-sync
+        if (err) {
+            throw new Error(`Error: webhook config file ${configPath} doesn't exist`);
+        }
+    });
 }
 
 function displayServerInformation({ port }) {
-    console.log(`Hooka is running on port ${port}`);
+    console.log(`Hooka is running on port ${port}`); // eslint-disable-line no-console
 }
