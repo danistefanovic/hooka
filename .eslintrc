@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "eslint-config-infektweb/configs/defaults",
+        "eslint-config-infektweb/configs/node"
+    ],
+    "env": {
+        "node": true
+    }
+}
