@@ -3,9 +3,9 @@ import path from 'path';
 import webhookServer from '../server';
 
 export default function run(argv) {
-    const config = getConfig(argv.config);
+    const hooks = getConfig(argv.config);
     const app = webhookServer.create();
-    const router = webhookServer.createRouter(config);
+    const router = webhookServer.createRouter(hooks, argv.secret);
     app.use(router);
     app.listen(argv.port, () => {
         displayServerInformation(argv);

@@ -19,6 +19,11 @@ const argv = yargs
             default: 3000,
             demand: true,
             description: 'Set port'
+        },
+        secret: {
+            alias: 's',
+            default: false,
+            description: 'Set secret token'
         }
     })
     .argv;

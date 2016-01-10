@@ -46,6 +46,7 @@
     "source-map-support": "0.4.0"
   },
   "dependencies": {
+    "body-parser": "1.14.2",
     "chalk": "1.1.1",
     "express": "4.13.3",
     "yargs": "3.31.0"
