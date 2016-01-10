@@ -1,4 +1,4 @@
-import runCommand from '../runCommand';
+import runCommand from '../process/runCommand';
 
 export default function registerHooks({ router, hooks }) {
     if (!router) throw new Error('No router provided');
