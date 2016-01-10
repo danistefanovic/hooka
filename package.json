@@ -1,6 +1,6 @@
 {
   "name": "hooka",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A webhook server with zero coding",
   "bin": "bin/index.js",
   "main": "lib/server/index.js",
