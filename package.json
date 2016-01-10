@@ -4,6 +4,10 @@
   "description": "A webhook server with zero coding",
   "bin": "bin/index.js",
   "main": "lib/server/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danistefanovic/hooka.git"
+  },
   "scripts": {
     "clean": "rimraf lib",
     "build": "babel src/ -d lib/ --source-maps",
