@@ -1,27 +1,30 @@
 import { spawn } from 'child_process';
+import logPrinter from '../logPrinter';
 import normalizeArgs from './normalizeArgs';
 
 export default function runCommand(command) {
     const id = Date.now();
     const { file, args, options } = normalizeArgs(command);
     const child = spawn(file, args, options);
+    const logger = logPrinter.create(id);
+    logger.logStart(command);
 
     return new Promise((resolve, reject) => {
-        child.stdout.on('data', handleStdout.bind(null, id));
-        child.stderr.on('data', handleStderr.bind(null, id));
-        child.on('close', handleClose.bind(null, id, resolve, reject));
+        child.stdout.on('data', handleStdout.bind(null, logger));
+        child.stderr.on('data', handleStderr.bind(null, logger));
+        child.on('close', handleClose.bind(null, logger, resolve, reject));
     });
 }
 
-function handleStdout(id, data) {
-    console.log(`${id} stdout: ${data}`); // eslint-disable-line no-console
+function handleStdout(logger, data) {
+    logger.log(data);
 }
 
-function handleStderr(id, data) {
-    console.log(`${id} stderr: ${data}`); // eslint-disable-line no-console
+function handleStderr(logger, data) {
+    logger.logError(data);
 }
 
-function handleClose(id, resolve, reject, exitCode) {
-    console.log(`${id} Exit code: ${exitCode}`); // eslint-disable-line no-console
+function handleClose(logger, resolve, reject, exitCode) {
+    logger.logExit(exitCode);
     return (exitCode === 0) ? resolve() : reject(exitCode);
 }

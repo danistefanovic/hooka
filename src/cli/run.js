@@ -21,5 +21,5 @@ function getConfig(relativePath) {
 }
 
 function displayServerInformation({ port }) {
-    console.log(`Hooka is running on port ${port}`); // eslint-disable-line no-console
+    console.log(`Hooka webhook server is running on port ${port}`); // eslint-disable-line no-console
 }
