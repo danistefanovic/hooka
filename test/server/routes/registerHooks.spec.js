@@ -12,10 +12,12 @@ describe('registerHooks', () => {
     beforeEach(() => {
         addRoute = jasmine.createSpy('addRoute');
         rewireAPI.__Rewire__('addRoute', addRoute);
+        rewireAPI.__Rewire__('validateHook', () => {});
     });
 
     afterEach(() => {
         rewireAPI.__ResetDependency__('addRoute');
+        rewireAPI.__ResetDependency__('validateHook');
     });
 
     it('should throw an error if no router is provided', () => {
