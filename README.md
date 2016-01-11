@@ -1,5 +1,7 @@
 # Hooka
 
+[![Build Status](https://travis-ci.org/danistefanovic/hooka.svg)](https://travis-ci.org/danistefanovic/hooka)
+
 Work in progres...
 
 ## License
