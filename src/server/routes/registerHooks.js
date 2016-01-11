@@ -1,3 +1,4 @@
+import validateHook from '../utils/validateHook';
 import runCommand from '../process/runCommand';
 
 export default function registerHooks({ router, hooks }) {
@@ -5,6 +6,7 @@ export default function registerHooks({ router, hooks }) {
     if (!hooks) throw new Error('No hooks provided');
 
     hooks.forEach((hook) => {
+        validateHook(hook);
         registerHook({ router, ...hook });
     });
 }
