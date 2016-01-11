@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import webhookServer from '../server';
 
@@ -14,10 +13,11 @@ export default function run(argv) {
 
 function getConfig(relativePath) {
     const configPath = path.resolve(process.cwd(), relativePath);
-    fs.accessSync(configPath, (err) => { // eslint-disable-line no-sync
-        if (err) throw new Error(`Config file ${configPath} doesn't exist`);
-    });
-    return require(configPath);
+    try {
+        return require(configPath);
+    } catch (e) {
+        throw new Error(`Config file ${configPath} doesn't exist`);
+    }
 }
 
 function displayServerInformation({ port }) {
