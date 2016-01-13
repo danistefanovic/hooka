@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-require('../lib/cli');
+var cli = require('../lib/cli').default;
+cli.create(cli.getArgv());
