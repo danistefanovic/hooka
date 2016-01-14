@@ -1,4 +1,4 @@
-import path from 'path';
+import getConfig from './getConfig';
 import webhookServer from '../server';
 
 export default function create(argv) {
@@ -10,15 +10,6 @@ export default function create(argv) {
     return app.listen(argv.port, () => {
         displayServerInformation(argv);
     });
-}
-
-function getConfig(relativePath) {
-    const configPath = path.resolve(process.cwd(), relativePath);
-    try {
-        return require(configPath);
-    } catch (e) {
-        throw new Error(`Config file ${configPath} doesn't exist`);
-    }
 }
 
 function displayServerInformation({ port }) {
