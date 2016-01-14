@@ -1,0 +1,12 @@
+[
+    {
+        "method": "GET",
+        "path": "/test1",
+        "command": "echo test1"
+    },
+    {
+        "method": ["GET", "POST"],
+        "path": "/test2",
+        "command": "echo test2"
+    }
+]
