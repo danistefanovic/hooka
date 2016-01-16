@@ -4,6 +4,6 @@
         "**/*.js"
     ],
     "helpers": [
-        "helpers/**/*.js"
+        "helpers/es6.js"
     ]
 }
