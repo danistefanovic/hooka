@@ -48,7 +48,7 @@ Or provide a custom path to your webhooks file:
 $ hooka --config /path/to/your/webhooks.json
 ```
 
-Open [http://localhost:3000/hello](http://localhost:3000/hello) in your Browser. Now if you go back to your terminal, you should see something like:
+Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser. Now if you go back to your terminal, you should see something like:
 ```
 1452973827230 started: echo hello world
 1452973827230 | hello world
