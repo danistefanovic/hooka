@@ -1,4 +1,4 @@
-# Hooka
+# ![hooka](media/logo.png)
 
 [![Build Status][travis-image]][travis-url] 
 [![Dependency status][david-dm-image]][david-dm-url] 
