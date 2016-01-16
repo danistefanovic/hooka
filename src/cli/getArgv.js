@@ -3,7 +3,7 @@ import pkg from '../../package.json';
 
 export default function getArgv() {
     return yargs
-        .usage('Usage: $0 <command> [options]')
+        .usage('Usage: $0 [options]')
         .help('help').alias('help', 'h')
         .version(pkg.version).alias('version', 'v')
         .options({
