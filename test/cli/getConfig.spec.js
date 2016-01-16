@@ -7,12 +7,12 @@ describe('cli getConfig', () => {
         expect(config[0]).toEqual({
             method: 'GET',
             path: '/test1',
-            command: 'echo test1'
+            command: 'echo hello test1'
         });
         expect(config[1]).toEqual({
             method: ['GET', 'POST'],
             path: '/test2',
-            command: 'echo test2'
+            command: 'echo hello test2'
         });
     });
 

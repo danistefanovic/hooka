@@ -2,11 +2,11 @@
     {
         "method": "GET",
         "path": "/test1",
-        "command": "echo test1"
+        "command": "echo hello test1"
     },
     {
         "method": ["GET", "POST"],
         "path": "/test2",
-        "command": "echo test2"
+        "command": "echo hello test2"
     }
 ]
