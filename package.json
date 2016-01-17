@@ -10,13 +10,16 @@
   },
   "scripts": {
     "clean": "rimraf lib",
-    "build": "babel src/ -d lib/ --source-maps",
+    "build": "npm run clean && npm run build:lib",
+    "build:lib": "babel src/ -d lib/ --source-maps",
     "build:watch": "npm run build -- --watch",
-    "prepublish": "npm run clean && npm run build",
+    "prepublish": "npm run build",
     "test:all": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint .",
     "test:unit": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
-    "test:watch": "nodemon --exec npm run test:unit"
+    "test:watch": "nodemon --exec npm run test:unit",
+    "preversion": "npm run build && npm run test:all",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "webhook",
