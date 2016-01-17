@@ -11,7 +11,7 @@
 [david-dm-dev-url]:https://david-dm.org/danistefanovic/hooka#info=devDependencies
 [david-dm-dev-image]:https://david-dm.org/danistefanovic/hooka/dev-status.svg
 
-Work in progres...
+Work in progress...
 
 ## Installation
 
