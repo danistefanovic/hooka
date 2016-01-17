@@ -17,6 +17,10 @@ describe('cli getConfig', () => {
     });
 
     it('should throw an error if the file was not found', () => {
-        expect(getConfig.bind(null, 'nope.json')).toThrow();
+        expect(getConfig.bind(null, 'nope.json')).toThrowError(/doesn't exist/);
+    });
+
+    it('should throw an error if the file contains no valid JSON', () => {
+        expect(getConfig.bind(null, 'test/.eslintrc')).toThrowError(/doesn't contain valid JSON/);
     });
 });
