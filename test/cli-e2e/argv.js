@@ -42,7 +42,7 @@ describe('CLI argv', () => {
 
         it('should throw an error if no webhooks.json is found in the CWD', (callback) => {
             const handleServerReady = jasmine.createSpy('handleServerReady');
-            child = cli(['--port', port], '../../');
+            child = cli(['--port', port], path.join(testFolder, 'cli-e2e'));
             serverReady(port, handleServerReady);
             child.on('close', (code) => {
                 expect(code).toBe(1);
