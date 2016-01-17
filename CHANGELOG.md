@@ -1,4 +1,4 @@
 ## [v0.1.0]
-> Not published yet
+> Jan 17, 2016
 
 - Initial release
