@@ -12,7 +12,7 @@
     "clean": "rimraf lib",
     "build": "babel src/ -d lib/ --source-maps",
     "build:watch": "npm run build -- --watch",
-    "prepublish": "npm run build",
+    "prepublish": "npm run clean && npm run build",
     "test:all": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint .",
     "test:unit": "jasmine JASMINE_CONFIG_PATH=test/jasmine.json",
