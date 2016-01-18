@@ -5,7 +5,7 @@ describe('registerHooks', () => {
     const mockRouter = {};
 
     const mockHooks = [
-        { method: 'GET', path: '/foo', command: 'echo bar' },
+        { method: 'GET', path: '/foo', command: 'echo bar', cwd: '/tmp' },
         { method: ['GET', 'POST'], path: '/hello', command: 'echo hello world' }
     ];
 
@@ -39,7 +39,8 @@ describe('registerHooks', () => {
             router: mockRouter,
             method: 'GET',
             path: '/foo',
-            command: 'echo bar'
+            command: 'echo bar',
+            cwd: '/tmp'
         }]);
         expect(addRoute.calls.argsFor(1)).toEqual([{
             router: mockRouter,

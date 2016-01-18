@@ -10,7 +10,8 @@ const schema = joi.object().keys({
         joi.array().items(methodSchema).min(1)
     ).required(),
     path: joi.string().regex(relativeUrlRegex).required(),
-    command: joi.string().required()
+    command: joi.string().required(),
+    cwd: joi.string()
 });
 
 export default function validateHook(hook) {

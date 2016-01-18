@@ -2,10 +2,10 @@ import { spawn } from 'child_process';
 import logPrinter from '../logPrinter';
 import normalizeArgs from './normalizeArgs';
 
-export default function runCommand(command) {
+export default function runCommand(command, options) {
     const id = Date.now();
-    const { file, args, options } = normalizeArgs(command);
-    const child = spawn(file, args, options);
+    const { file, args, defaultOptions } = normalizeArgs(command);
+    const child = spawn(file, args, { ...defaultOptions, ...options });
     const logger = logPrinter.create(id);
     logger.logStart(command);
 

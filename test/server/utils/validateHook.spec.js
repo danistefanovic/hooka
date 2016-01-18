@@ -45,4 +45,17 @@ describe('validateHook', () => {
             expect(validateHook.bind(null, { ...mockHooks[0], command: nonString })).toThrow();
         });
     });
+
+    it('should only allow a string as "cwd" if provided', () => {
+        let validate = validateHook.bind(null, mockHooks[0]);
+        expect(validate).not.toThrow();
+        nonStrings.forEach((nonString) => {
+            validate = validateHook.bind(null, { ...mockHooks[0], cwd: nonString });
+            if ([undefined].includes(nonString)) {
+                expect(validate).not.toThrow();
+            } else {
+                expect(validate).toThrow();
+            }
+        });
+    });
 });

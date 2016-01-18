@@ -52,4 +52,13 @@ describe('runCommand', () => {
             throw new Error(`Oops, something went wrong: ${reason}`);
         });
     });
+
+    it('should spawn a process with the provided options', () => {
+        const options = { cwd: '/test' };
+        const spawn = jasmine.createSpy('spawn');
+        rewireAPI.__Rewire__('spawn', spawn);
+        runCommand('dosomething', options);
+        expect(spawn.calls.count()).toBe(1);
+        expect(spawn.calls.argsFor(0)[2]).toEqual(options);
+    });
 });
