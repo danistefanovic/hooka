@@ -12,7 +12,7 @@
     "clean": "rimraf lib",
     "build": "npm run clean && npm run build:lib",
     "build:lib": "babel src/ -d lib/ --source-maps",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "npm run build:lib -- --watch",
     "prepublish": "npm run build",
     "test:all": "npm run test:lint && npm run test:unit",
     "test:lint": "eslint .",
