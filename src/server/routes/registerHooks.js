@@ -19,9 +19,10 @@ function registerHook(params) {
     }
 }
 
-function addRoute({ router, method, path, command }) {
+function addRoute({ router, method, path, command, cwd }) {
     router[method.toLowerCase()](path, (req, res) => {
-        runCommand(command);
+        const options = { cwd };
+        runCommand(command, options);
         res.json({ path, requestReceivedAt: Date.now() });
     });
 }
