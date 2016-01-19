@@ -6,6 +6,7 @@ export default function getArgv() {
         .usage('Usage: $0 [options]')
         .help('help').alias('help', 'h')
         .version(pkg.version).alias('version', 'v')
+        .implies('tls-key', 'tls-cert')
         .options({
             config: {
                 alias: 'c',
@@ -23,7 +24,13 @@ export default function getArgv() {
                 alias: 's',
                 default: false,
                 description: 'Set secret token'
-            }
+            },
+            'tls-key': {
+                description: 'Path to private key'
+            },
+            'tls-cert': {
+                description: 'Path to certificate'
+            },
         })
         .argv;
 };
