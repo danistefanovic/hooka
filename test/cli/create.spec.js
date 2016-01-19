@@ -1,14 +1,14 @@
 import create, { __RewireAPI__ as rewireAPI } from '../../src/cli/create';
 
 describe('cli create', () => {
-    const mockArgv = { config: '' };
+    const mockArgv = { config: '', port: 4444 };
     const mockWebhookServer = {
         create: () => ({
             use: () => {},
             listen: () => {}
         }),
         createRouter: () => {},
-        getConfig: () => {}
+        listen: () => {}
     };
 
     afterEach(() => {
@@ -43,5 +43,16 @@ describe('cli create', () => {
         create(mockArgv);
         expect(use.calls.count()).toBe(1);
         expect(use).toHaveBeenCalledWith(123);
+    });
+
+    it('should begin to listen to a port', () => {
+        const listen = jasmine.createSpy('listen');
+        rewireAPI.__Rewire__('webhookServer', { ...mockWebhookServer, listen });
+        create(mockArgv);
+        expect(listen.calls.count()).toBe(1);
+        expect(listen.calls.argsFor(0)[0]).toEqual(jasmine.any(Object)); // app
+        expect(listen.calls.argsFor(0)[1]).toBe(mockArgv.port);
+        expect(listen.calls.argsFor(0)[2]).toEqual(jasmine.any(Object)); // options
+        expect(listen.calls.argsFor(0)[3]).toEqual(jasmine.any(Function)); // callback
     });
 });
