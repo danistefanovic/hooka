@@ -47,6 +47,10 @@ Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser.
 1452973827230 exited with code 0
 ````
 
+## Documentation
+
+* [CLI options](docs/cli.md)
+
 ## License
 
 MIT -  Do whatever you want with it, but don't blame me for anything that goes wrong.
