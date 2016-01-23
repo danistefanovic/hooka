@@ -50,6 +50,7 @@ Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser.
 ## Documentation
 
 * [CLI options](docs/cli.md)
+* [Webhooks JSON](docs/webhooks.md)
 
 ## License
 
