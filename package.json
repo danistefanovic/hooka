@@ -22,11 +22,13 @@
     "postversion": "git push && git push --tags"
   },
   "keywords": [
-    "webhook",
+    "webhook server",
     "server",
-    "webhooks",
-    "hook",
-    "hooks"
+    "webhook",
+    "hooks",
+    "http",
+    "callback",
+    "endpoints"
   ],
   "author": "Daniel Stefanovic",
   "license": "MIT",
