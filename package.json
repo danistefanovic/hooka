@@ -59,7 +59,8 @@
     "chalk": "1.1.1",
     "express": "4.13.3",
     "joi": "7.1.0",
-    "yargs": "3.31.0",
-    "source-map-support": "0.4.0"
+    "lodash": "4.0.0",
+    "source-map-support": "0.4.0",
+    "yargs": "3.31.0"
   }
 }
