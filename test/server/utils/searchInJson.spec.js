@@ -54,4 +54,18 @@ describe('searchInJson', () => {
             });
         });
     });
+
+    describe('a query that does not match', () => {
+        it('should return undefined if the leaf does not exist', () => {
+            const json = { a: 'va1' };
+            const query = 'json.b';
+            expect(searchInJson(json, query)).toEqual(undefined);
+        });
+
+        it('should return undefined if an internal node does not exist', () => {
+            const json = { a: { b: 'vb1' } };
+            const query = 'json.x.b';
+            expect(searchInJson(json, query)).toEqual(undefined);
+        });
+    });
 });
