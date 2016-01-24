@@ -11,7 +11,11 @@ const schema = joi.object().keys({
     ).required(),
     path: joi.string().regex(relativeUrlRegex).required(),
     command: joi.string().required(),
-    cwd: joi.string()
+    cwd: joi.string(),
+    parseJson: joi.array().items(joi.object().keys({
+        query: joi.string().required(),
+        variable: joi.string().required()
+    }))
 });
 
 export default function validateHook(hook) {
