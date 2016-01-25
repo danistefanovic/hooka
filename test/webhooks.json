@@ -8,5 +8,16 @@
         "method": ["GET", "POST"],
         "path": "/test2",
         "command": "echo hello test2"
+    },
+    {
+        "method": "POST",
+        "path": "/test3",
+        "command": "echo hello test3",
+        "parseJson": [
+            {
+                "query": "payload.items.0.foo.bar",
+                "variable": "varTest3"
+            }
+        ]
     }
 ]

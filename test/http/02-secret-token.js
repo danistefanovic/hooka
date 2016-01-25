@@ -45,17 +45,17 @@ describe('HTTP secret token', () => {
             .end(handleHttpSuccess.bind(null, callback));
     });
 
-    it('GET /test3', (callback) => {
+    it('GET /test99', (callback) => {
         request(app)
-            .get('/test3')
+            .get('/test99')
             .set('Accept', 'application/json')
             .expect(401)
             .end(handleHttpError.bind(null, callback));
     });
 
-    it('POST /test3', (callback) => {
+    it('POST /test99', (callback) => {
         request(app)
-            .post('/test3')
+            .post('/test99')
             .send(`HOOKA_SECRET=${secretToken}`)
             .set('Accept', 'application/json')
             .expect(404)
