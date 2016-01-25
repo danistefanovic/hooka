@@ -3,7 +3,7 @@ import getConfig from '../../src/cli/getConfig';
 describe('cli getConfig', () => {
     it('should return the specified JSON webhooks config', () => {
         const config = getConfig('test/webhooks.json');
-        expect(config.length).toBe(2);
+        expect(config.length).toBe(3);
         expect(config[0]).toEqual({
             method: 'GET',
             path: '/test1',
@@ -13,6 +13,17 @@ describe('cli getConfig', () => {
             method: ['GET', 'POST'],
             path: '/test2',
             command: 'echo hello test2'
+        });
+        expect(config[2]).toEqual({
+            method: 'POST',
+            path: '/test3',
+            command: 'echo hello test3',
+            parseJson: [
+                {
+                    query: 'payload.items.0.foo.bar',
+                    variable: 'varTest3'
+                }
+            ]
         });
     });
 

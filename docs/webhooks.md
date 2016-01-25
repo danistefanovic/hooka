@@ -16,6 +16,21 @@ You can paste your `webhooks.json` at [jsonlint.com](http://jsonlint.com/) to va
         "path": "/list-tmp-directory-contents",
         "command": "ls -la",
         "cwd": "/tmp"
+    },
+    {
+        "method": "POST",
+        "path": "/greet-second-user",
+        "command": "echo $GREETING $NAME",
+        "parseJson": [
+            {
+                "query": "payload.users.1.greeting",
+                "variable": "GREETING"
+            },
+            {
+                "query": "payload.users.1.name",
+                "variable": "NAME"
+            }
+        ]
     }
 ]
 ```
@@ -63,4 +78,25 @@ Command working directory. String.
 
 ```
 "cwd": "/tmp"
+```
+
+### parseJson
+
+Map JSON values to environment variables. Array of objects. Object schema:
+* `query`: JSON path in dot-notatation. String.
+* `variable`: Environment variable name. String.
+
+```
+"parseJson": [
+    {
+        "query": "payload.users.1.greeting",
+        "variable": "GREETING"
+    }
+]
+```
+
+The variable can then be accessed in the `"command"` field:
+
+```
+"command": "echo $GREETING"
 ```

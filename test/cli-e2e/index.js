@@ -47,7 +47,7 @@ describe('CLI e2e', () => {
         const startMessage = `Hooka webhook server is running on port ${port}\n`;
         const stdoutSpy = jasmine.createSpy('stdoutSpy');
         child.stdout.on('data', stdoutSpy);
-        request.post('/test3').expect(404).end(() => {
+        request.post('/test99').expect(404).end(() => {
             expect(stdoutSpy.calls.count()).toBe(1);
             expect(stdoutSpy.calls.argsFor(0)).toEqual([new Buffer(startMessage)]);
             callback();

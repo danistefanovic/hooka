@@ -3,10 +3,12 @@
 
 - Added `cwd` option to hooks config file ([#13])
 - Added TLS/SSL support ([#14])
+- Added functionality to pass JSON values to command via environment variables ([#17])
 
 [HEAD]: https://github.com/danistefanovic/hooka/compare/v0.1.0...HEAD
 [#13]: https://github.com/danistefanovic/hooka/issues/13
 [#14]: https://github.com/danistefanovic/hooka/issues/14
+[#14]: https://github.com/danistefanovic/hooka/issues/17
 
 ## [v0.1.0]
 > Jan 17, 2016
