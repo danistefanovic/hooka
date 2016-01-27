@@ -5,6 +5,5 @@ describe('cli getArgv', () => {
         const argv = getArgv();
         expect(argv.config).toBe('webhooks.json');
         expect(argv.port).toBe(3000);
-        expect(argv.secret).toBe(false);
     });
 });

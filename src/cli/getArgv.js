@@ -20,11 +20,6 @@ export default function getArgv() {
                 demand: true,
                 description: 'Set port'
             },
-            secret: {
-                alias: 's',
-                default: false,
-                description: 'Set secret token'
-            },
             'tls-key': {
                 description: 'Path to private key'
             },
