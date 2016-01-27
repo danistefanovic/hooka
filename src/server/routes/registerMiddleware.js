@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser';
 
-export default function registerMiddleware({ router, secret }) {
+export default function registerMiddleware({ router }) {
     if (!router) throw new Error('No router provided');
 
     router.use(bodyParser.json());
