@@ -1,7 +1,8 @@
+import ruleValidator from '../middleware/ruleValidator';
+import parseJsonValidator from '../middleware/parseJsonValidator';
 import runCommand from '../process/runCommand';
-import areObjectValuesDefined from '../utils/areObjectValuesDefined';
 import pickVariablesFromJson from '../utils/pickVariablesFromJson';
-import validateHook from '../utils/validateHook';
+import validateHook from '../validation/validateHook';
 
 export default function registerHooks({ router, hooks }) {
     if (!router) throw new Error('No router provided');
@@ -21,14 +22,12 @@ function registerHook(params) {
     }
 }
 
-function addRoute({ router, method, path, command, cwd, parseJson }) {
+function addRoute({ router, method, path, command, cwd, parseJson, validate }) {
+    router.use(path, ruleValidator(validate));
+    router.use(path, parseJsonValidator(parseJson));
+
     router[method.toLowerCase()](path, (req, res) => {
         const env = pickVariablesFromJson(req.body, parseJson);
-
-        if (parseJson && !areObjectValuesDefined(env)) {
-            return res.status(400).send('JSON path does not match');
-        }
-
         const options = { cwd, env };
         runCommand(command, options);
         res.json({ path, requestReceivedAt: Date.now() });
