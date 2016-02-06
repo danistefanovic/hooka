@@ -51,7 +51,7 @@ Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser.
 
 * [CLI options](docs/cli.md)
 * [Webhooks JSON](docs/webhooks.md)
-* Recipes
+* [Recipes](docs/recipes.md)
   * [Bitbucket](docs/recipes/bitbucket.md)
   * [GitHub](docs/recipes/github.md)
   * [Slack](docs/recipes/slack.md)
