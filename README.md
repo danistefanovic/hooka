@@ -81,7 +81,7 @@ $ npm install -g hooka
       http://localhost:3000/hello-again
   ```
 
-1. Now if you go back to your terminal, where Hooka is running, you should see something like:
+1. Now if you go back to your terminal where Hooka is running, you should see something like:
 
 <p align="center">
     <img src="media/screencast.gif" width="700" />
