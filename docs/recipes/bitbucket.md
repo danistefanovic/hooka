@@ -1,5 +1,6 @@
 # Bitbucket
 
+* You can test Bitbucket webhooks with [ngrok](https://ngrok.com/) locally
 * See [Bitbucket: Manage webhooks](https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html)
 
 ```json
