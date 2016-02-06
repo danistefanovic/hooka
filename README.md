@@ -18,39 +18,62 @@ $ npm install -g hooka
 
 ## Basic usage
 
-Create a `webhooks.json` file:
+1. Create a `webhooks.json` file:
 
-```
-[
-    {
-        "method": "GET",
-        "path": "/hello",
-        "command": "echo hello world"
-    },
-    {
-        "method": ["GET", "POST"],
-        "path": "/hello-again",
-        "command": "echo hello again"
-    }
-]
-```
+  ```json
+  [
+      {
+          "method": ["GET", "POST"],
+          "path": "/hello",
+          "command": "echo Hello world"
+      },
+      {
+          "method": "POST",
+          "path": "/hello-again",
+          "command": "echo Hello from the other side: $MESSAGE",
+          "validate": [
+              {
+                  "source": "jsonBody",
+                  "find": "payload.token",
+                  "match": "exactly",
+                  "value": "MySecret"
+              }
+          ],
+          "parseJson": [
+              {
+                  "query": "payload.text",
+                  "variable": "MESSAGE"
+              }
+          ]
+      }
+  ]
+  ```
 
-Start Hooka in the same directory:
-```sh
-$ hooka
-```
+1. Start Hooka in the same directory:
+  ```sh
+  $ hooka
+  ```
 
-Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser. Now if you go back to your terminal, you should see something like:
-```
-1452973827230 started: echo hello world
-1452973827230 | hello world
-1452973827230 exited with code 0
-````
+1. Open [http://localhost:3000/hello](http://localhost:3000/hello) in your browser to trigger the first hook.
+
+1. Trigger the second hook with a POST request in a new terminal window:
+  ```sh
+  $ curl -H "Content-Type: application/json" -X POST -d '{"text": "I love cupcakes", "token": "MySecret"}' http://localhost:3000/hello-again
+  ```
+
+1. Now if you go back to your terminal, where Hooka is running, you should see something like:
+  ```
+  <screenshot>
+  ````
 
 ## Documentation
 
 * [CLI options](docs/cli.md)
 * [Webhooks JSON](docs/webhooks.md)
+* [Recipes](docs/recipes.md)
+  * [Bitbucket](docs/recipes/bitbucket.md)
+  * [GitHub](docs/recipes/github.md)
+  * [Slack](docs/recipes/slack.md)
 
 ## License
 
