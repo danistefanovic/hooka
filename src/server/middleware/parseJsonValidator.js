@@ -11,8 +11,13 @@ export default function parseJsonValidator(parseJson) {
     return (req, res, next) => {
         const env = pickVariablesFromJson(req.body, parseJson);
         if (parseJson && !areObjectValuesDefined(env)) {
-            return res.status(400).send('JSON path does not match');
+            const variables = JSON.stringify(env, replaceUndefined, '  ');
+            return res.status(400).send(`A JSON path does not match: ${variables}`);
         }
         next();
     };
+}
+
+function replaceUndefined(key, value) {
+    return (value === undefined) ? 'not found' : value;
 }
