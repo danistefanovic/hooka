@@ -5,6 +5,13 @@ import runCommand from '../process/runCommand';
 import pickVariablesFromJson from '../utils/pickVariablesFromJson';
 import validateHook from '../validation/validateHook';
 
+/**
+ * Registers hook endpoints
+ * @param {Object} params
+ * @param {Object} params.router Express router
+ * @param {Array} params.hooks Webhooks.json config entries
+ * @return {void}
+ */
 export default function registerHooks({ router, hooks }) {
     if (!router) throw new Error('No router provided');
     if (!hooks) throw new Error('No hooks provided');
