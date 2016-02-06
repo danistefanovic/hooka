@@ -1,5 +1,7 @@
 # Bitbucket
 
+* See [Bitbucket: Manage webhooks](https://confluence.atlassian.com/bitbucket/manage-webhooks-735643732.html)
+
 ```json
 [
     {
