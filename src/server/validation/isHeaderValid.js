@@ -8,6 +8,6 @@ import doesRuleMatch from './doesRuleMatch';
  * @return {Boolean}
  */
 export default function isHeaderValid(req, rule) {
-    const value = req.headers[rule.find];
-    return doesRuleMatch(rule, value);
+    const value = req.headers[rule.find.toLowerCase()];
+    return doesRuleMatch(rule, value, { payload: req.rawBody });
 }

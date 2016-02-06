@@ -34,4 +34,27 @@ describe('doesRuleMatch', () => {
             expect(doesRuleMatch(rule, value)).toBe(false);
         });
     });
+
+    describe('match HMAC-SHA1', () => {
+        it('should return true if the HMAC-SHA1 matches', () => {
+            const options = { payload: 'My payload' };
+            const value = 'sha1=e2d7ebf7a8415071d34cc36bdc5e4b1d4f039274';
+            const rule = { match: 'hmac-sha1', value: 'supersecret' };
+            expect(doesRuleMatch(rule, value, options)).toBe(true);
+        });
+
+        it('should return false if the provided key is incorrect', () => {
+            const options = { payload: 'My payload' };
+            const value = 'sha1=e2d7ebf7a8415071d34cc36bdc5e4b1d4f039274';
+            const rule = { match: 'hmac-sha1', value: 'anothersecret' };
+            expect(doesRuleMatch(rule, value, options)).toBe(false);
+        });
+
+        it('should return false if the payload is incorrect', () => {
+            const options = { payload: 'My other payload' };
+            const value = 'sha1=e2d7ebf7a8415071d34cc36bdc5e4b1d4f039274';
+            const rule = { match: 'hmac-sha1', value: 'supersecret' };
+            expect(doesRuleMatch(rule, value, options)).toBe(false);
+        });
+    });
 });

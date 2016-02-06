@@ -55,7 +55,8 @@ describe('validateHook', () => {
             [
                 { source: 'jsonBody', find: 'payload.foo', match: 'exactly', value: 'bar' },
                 { source: 'urlencodedBody', find: 'foo', match: 'Exactly', value: 2 },
-                { source: 'HeAdEr', find: 'x-foo', match: 'regExp', value: 'bar$' }
+                { source: 'HeAdEr', find: 'x-foo', match: 'regExp', value: 'bar$' },
+                { source: 'jsonBody', find: 'payload.foo', match: 'hmac-sha1', value: 'bar' }
             ]
         ];
         const invalid = [

@@ -95,4 +95,26 @@ describe('HTTP validate', () => {
                 .end(handleHttpError.bind(null, callback));
         });
     });
+
+    describe('header + hmac-sha1', () => {
+        it('should pass the validation', (callback) => {
+            request(app)
+                .post('/test7')
+                .send({ foo: 'bar' })
+                .set('x-foo', 'sha1=a28e95bb4438893d79ac4b39547785f19e919ae3')
+                .set('Accept', 'application/json')
+                .expect(200)
+                .end(handleHttpSuccess.bind(null, callback));
+        });
+
+        it('should fail if the payload and generated HMAC do not match', (callback) => {
+            request(app)
+                .post('/test7')
+                .send({ something: 'modified' })
+                .set('x-foo', 'sha1=a28e95bb4438893d79ac4b39547785f19e919ae3')
+                .set('Accept', 'application/json')
+                .expect(400)
+                .end(handleHttpError.bind(null, callback));
+        });
+    });
 });

@@ -1,7 +1,7 @@
 import joi from 'joi';
 
 const relativeUrlRegex = /^\/[a-zA-Z0-9\-\/]*$/;
-const matchTypes = ['exactly', 'regexp'];
+const matchTypes = ['exactly', 'regexp', 'hmac-sha1'];
 const validationSources = ['jsonBody', 'urlencodedBody', 'header'];
 const httpMethods = ['GET', 'POST', 'PUT', 'DELETE'];
 const methodSchema = joi.string().valid(httpMethods).insensitive();
