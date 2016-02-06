@@ -16,6 +16,13 @@
 $ npm install -g hooka
 ```
 
+## Features
+
+* Zero coding
+* Pass request data to the command
+* Set validation rules to trigger hooks only under certain circumstances
+* TLS/SSL support
+
 ## Documentation
 
 * [CLI options](docs/cli.md)
