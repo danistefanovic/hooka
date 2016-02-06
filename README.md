@@ -62,9 +62,8 @@ $ npm install -g hooka
   ```
 
 1. Now if you go back to your terminal, where Hooka is running, you should see something like:
-  ```
-  <screenshot>
-  ````
+
+<img src="media/screencast.gif" width="650">
 
 ## Documentation
 
