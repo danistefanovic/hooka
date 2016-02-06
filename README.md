@@ -76,7 +76,9 @@ $ npm install -g hooka
 
 1. Now if you go back to your terminal, where Hooka is running, you should see something like:
 
-<img src="media/screencast.gif" width="650">
+<p align="center">
+    <img src="media/screencast.gif" width="700" />
+</p>
 
 
 ## License
