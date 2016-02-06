@@ -25,7 +25,7 @@ $ npm install -g hooka
       {
           "method": ["GET", "POST"],
           "path": "/hello",
-          "command": "echo hello world"
+          "command": "echo Hello world"
       },
       {
           "method": "POST",
