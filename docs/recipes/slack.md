@@ -1,6 +1,7 @@
 # Slack
 
-- See [Slack: Outgoing Webhooks](https://api.slack.com/outgoing-webhooks)
+* You can test Slack webhooks with [ngrok](https://ngrok.com/) locally
+* See [Slack: Outgoing Webhooks](https://api.slack.com/outgoing-webhooks)
 
 ```json
 [
