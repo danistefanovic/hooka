@@ -67,7 +67,11 @@ $ npm install -g hooka
 
 1. Trigger the second hook with a POST request in a new terminal window:
   ```sh
-  $ curl -H "Content-Type: application/json" -X POST -d '{"text": "I love cupcakes", "token": "MySecret"}' http://localhost:3000/hello-again
+  $ curl \
+      -H "Content-Type: application/json" \
+      -X POST \
+      -d '{"text": "I love cupcakes", "token": "MySecret"}' \
+      http://localhost:3000/hello-again
   ```
 
 1. Now if you go back to your terminal, where Hooka is running, you should see something like:
