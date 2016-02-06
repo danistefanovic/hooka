@@ -22,8 +22,8 @@ function logError(color, id, message) {
     write(color(`${id} | `) + error(message));
 }
 
-function logStart(color, id, command) {
-    write(color(`${id} started: ${command}`));
+function logStart(color, id, method, path) {
+    write(color(`${id} ${method.toUpperCase()} ${path}`));
 }
 
 function logExit(color, id, exitCode) {

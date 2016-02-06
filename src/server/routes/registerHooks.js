@@ -1,3 +1,4 @@
+import logPrinter from '../logPrinter';
 import ruleValidator from '../middleware/ruleValidator';
 import parseJsonValidator from '../middleware/parseJsonValidator';
 import runCommand from '../process/runCommand';
@@ -27,9 +28,13 @@ function addRoute({ router, method, path, command, cwd, parseJson, validate }) {
     router.use(path, parseJsonValidator(parseJson));
 
     router[method.toLowerCase()](path, (req, res) => {
+        const id = Date.now();
+        const logger = logPrinter.create(id);
+        logger.logStart(method, path);
+
         const env = pickVariablesFromJson(req.body, parseJson);
         const options = { cwd, env };
-        runCommand(command, options);
+        runCommand(command, options, logger);
         res.json({ path, requestReceivedAt: Date.now() });
     });
 }
