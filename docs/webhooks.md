@@ -7,7 +7,7 @@ You can paste your `webhooks.json` at [jsonlint.com](http://jsonlint.com/) to va
 ```json
 [
     {
-        "method": "POST",
+        "method": ["GET", "POST"],
         "path": "/list-tmp-directory-content",
         "command": "ls -la",
         "cwd": "/tmp"
