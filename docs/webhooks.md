@@ -8,12 +8,7 @@ You can paste your `webhooks.json` at [jsonlint.com](http://jsonlint.com/) to va
 [
     {
         "method": ["GET", "POST"],
-        "path": "/hello",
-        "command": "echo hello world"
-    },
-    {
-        "method": "POST",
-        "path": "/list-tmp-directory-contents",
+        "path": "/list-tmp-directory-content",
         "command": "ls -la",
         "cwd": "/tmp"
     },
@@ -29,6 +24,19 @@ You can paste your `webhooks.json` at [jsonlint.com](http://jsonlint.com/) to va
             {
                 "query": "payload.users.1.name",
                 "variable": "NAME"
+            }
+        ]
+    },
+    {
+        "method": "POST",
+        "path": "/github",
+        "command": "echo hello github",
+        "validate": [
+            {
+                "source": "header",
+                "find": "X-Hub-Signature",
+                "match": "hmac-sha1",
+                "value": "MySuperSecret"
             }
         ]
     }
@@ -99,4 +107,47 @@ The variable can then be accessed in the `"command"` field:
 
 ```
 "command": "echo $GREETING"
+```
+
+### validate
+
+If set, the webhook will only be triggered if all validation rules match. Array of objects. Object schema:
+* `source`: HTTP request part. String.
+  * `jsonBody`: HTTP body application/json
+  * `urlencodedBody`: HTTP body x-www-form-urlencoded
+  * `header`: HTTP header
+* `find`: Depends on `source`
+  * `jsonBody` => JSON path in dot-notatation. String.
+  * `urlencodedBody` => x-www-form-urlencoded key. String.
+  * `header` => HTTP header field. String.
+* `match`: Match type. String.
+  * `exactly`: Match value exactly (strict equal). String.
+  * `regexp`: Match regular expresssion. String.
+  * `hmac-sha1`: Match computed HMAC SHA1. String 
+* `value`: Depends on `match`
+  * `exactly` => Expected value. Any.
+  * `regexp` => Regular expression. String.
+  * `hmac-sha1` => Secret key. String.
+
+```
+"validate": [
+    {
+        "source": "jsonBody",
+        "find": "payload.users.1.name",
+        "match": "exactly",
+        "value": "Bob"
+    },
+    {
+        "source": "urlencodedBody",
+        "find": "foo",
+        "match": "regexp",
+        "value": "ar$"
+    },
+    {
+        "source": "header",
+        "find": "X-My-Header",
+        "match": "hmac-sha1",
+        "value": "MySecretToken"
+    }
+]
 ```

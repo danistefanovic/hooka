@@ -19,5 +19,57 @@
                 "variable": "varTest3"
             }
         ]
+    },
+    {
+        "method": "POST",
+        "path": "/test4",
+        "command": "echo hello test4",
+        "validate": [
+            {
+                "source": "jsonBody",
+                "find": "payload.foo",
+                "match": "exactly",
+                "value": "bar"
+            }
+        ]
+    },
+    {
+        "method": "POST",
+        "path": "/test5",
+        "command": "echo hello test5",
+        "validate": [
+            {
+                "source": "urlencodedBody",
+                "find": "foo",
+                "match": "regexp",
+                "value": "ar$"
+            }
+        ]
+    },
+    {
+        "method": "POST",
+        "path": "/test6",
+        "command": "echo hello test6",
+        "validate": [
+            {
+                "source": "header",
+                "find": "x-foo",
+                "match": "exactly",
+                "value": "bar"
+            }
+        ]
+    },
+    {
+        "method": "POST",
+        "path": "/test7",
+        "command": "echo hello test7",
+        "validate": [
+            {
+                "source": "header",
+                "find": "x-foo",
+                "match": "hmac-sha1",
+                "value": "mySecret"
+            }
+        ]
     }
 ]
