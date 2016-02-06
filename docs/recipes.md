@@ -1,5 +1,5 @@
 # Recipes
 
-* [Bitbucket](docs/recipes/bitbucket.md)
-* [GitHub](docs/recipes/github.md)
-* [Slack](docs/recipes/slack.md)
+* [Bitbucket](recipes/bitbucket.md)
+* [GitHub](recipes/github.md)
+* [Slack](recipes/slack.md)
