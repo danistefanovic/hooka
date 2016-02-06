@@ -89,5 +89,8 @@ $ npm install -g hooka
 
 
 ## License
+> Do whatever you want with it, but don't blame me for anything that goes wrong.
 
-MIT -  Do whatever you want with it, but don't blame me for anything that goes wrong.
+MIT © [Daniel Stefanovic](http://twitter.com/danistefanovic)
+
+
