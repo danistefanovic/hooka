@@ -16,6 +16,15 @@
 $ npm install -g hooka
 ```
 
+## Documentation
+
+* [CLI options](docs/cli.md)
+* [Webhooks JSON](docs/webhooks.md)
+* [Recipes](docs/recipes.md)
+  * [Bitbucket](docs/recipes/bitbucket.md)
+  * [GitHub](docs/recipes/github.md)
+  * [Slack](docs/recipes/slack.md)
+
 ## Basic usage
 
 1. Create a `webhooks.json` file:
@@ -62,18 +71,9 @@ $ npm install -g hooka
   ```
 
 1. Now if you go back to your terminal, where Hooka is running, you should see something like:
-  ```
-  <screenshot>
-  ````
 
-## Documentation
+<img src="media/screencast.gif" width="650">
 
-* [CLI options](docs/cli.md)
-* [Webhooks JSON](docs/webhooks.md)
-* [Recipes](docs/recipes.md)
-  * [Bitbucket](docs/recipes/bitbucket.md)
-  * [GitHub](docs/recipes/github.md)
-  * [Slack](docs/recipes/slack.md)
 
 ## License
 
