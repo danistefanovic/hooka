@@ -1,5 +1,8 @@
 # GitHub
 
+* You can test GitHub webhooks with [ngrok](https://ngrok.com/) locally
+* See [Github: Webhooks](https://developer.github.com/webhooks/)
+
 ```json
 [
     {

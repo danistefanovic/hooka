@@ -16,6 +16,13 @@
 $ npm install -g hooka
 ```
 
+## Features
+
+* Zero coding
+* Pass request data to the command
+* Set validation rules to trigger hooks only under certain circumstances
+* TLS/SSL support
+
 ## Documentation
 
 * [CLI options](docs/cli.md)
@@ -74,11 +81,16 @@ $ npm install -g hooka
       http://localhost:3000/hello-again
   ```
 
-1. Now if you go back to your terminal, where Hooka is running, you should see something like:
+1. Now if you go back to your terminal where Hooka is running, you should see something like:
 
-<img src="media/screencast.gif" width="650">
+<p align="center">
+    <img src="media/screencast.gif" width="700" />
+</p>
 
 
 ## License
+> Do whatever you want with it, but don't blame me for anything that goes wrong.
 
-MIT -  Do whatever you want with it, but don't blame me for anything that goes wrong.
+MIT © [Daniel Stefanovic](http://twitter.com/danistefanovic)
+
+
