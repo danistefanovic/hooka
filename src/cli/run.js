@@ -2,7 +2,7 @@ import getConfig from './getConfig';
 import webhookServer from '../server';
 
 /**
- * Creates the webhook server and runs it
+ * Creates the webhook server and starts it
  * @param {Object} argv CLI arguments
  * @return {void}
  */
