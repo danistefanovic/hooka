@@ -1,6 +1,10 @@
 import yargs from 'yargs';
 import pkg from '../../package.json';
 
+/**
+ * Returns CLI argumens
+ * @return {Object}
+ */
 export default function getArgv() {
     return yargs
         .usage('Usage: $0 [options]')

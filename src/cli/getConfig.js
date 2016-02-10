@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 
+/**
+ * Returns the hook entries
+ * @param {string} relativePath Path to config file
+ * @return {Array} hooks
+ */
 export default function getConfig(relativePath) {
     const configPath = path.resolve(process.cwd(), relativePath);
 
