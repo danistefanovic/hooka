@@ -1,5 +1,5 @@
 import getArgv from './getArgv';
-import create from './create';
+import run from './run';
 
 // Public CLI API
-export default { create, getArgv };
+export default { run, getArgv };

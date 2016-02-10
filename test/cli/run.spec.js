@@ -1,6 +1,6 @@
-import create, { __RewireAPI__ as rewireAPI } from '../../src/cli/create';
+import run, { __RewireAPI__ as rewireAPI } from '../../src/cli/run';
 
-describe('cli create', () => {
+describe('cli run', () => {
     const mockArgv = { config: '', port: 4444 };
     const mockWebhookServer = {
         create: () => ({
@@ -18,14 +18,14 @@ describe('cli create', () => {
     it('should create a server', () => {
         const createServer = spyOn(mockWebhookServer, 'create').and.callThrough();
         rewireAPI.__Rewire__('webhookServer', { ...mockWebhookServer, create: createServer });
-        create(mockArgv);
+        run(mockArgv);
         expect(createServer.calls.count()).toBe(1);
     });
 
     it('should create a router', () => {
         const createRouter = jasmine.createSpy('create router');
         rewireAPI.__Rewire__('webhookServer', { ...mockWebhookServer, createRouter });
-        create(mockArgv);
+        run(mockArgv);
         expect(createRouter.calls.count()).toBe(1);
     });
 
@@ -40,7 +40,7 @@ describe('cli create', () => {
                 listen: () => {}
             })
         });
-        create(mockArgv);
+        run(mockArgv);
         expect(use.calls.count()).toBe(1);
         expect(use).toHaveBeenCalledWith(123);
     });
@@ -48,7 +48,7 @@ describe('cli create', () => {
     it('should begin to listen to a port', () => {
         const listen = jasmine.createSpy('listen');
         rewireAPI.__Rewire__('webhookServer', { ...mockWebhookServer, listen });
-        create(mockArgv);
+        run(mockArgv);
         expect(listen.calls.count()).toBe(1);
         expect(listen.calls.argsFor(0)[0]).toEqual(jasmine.any(Object)); // app
         expect(listen.calls.argsFor(0)[1]).toBe(mockArgv.port);
