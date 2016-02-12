@@ -87,8 +87,20 @@ $ npm install -g hooka
     <img src="media/screencast.gif" width="700" />
 </p>
 
+## Security
+
+Since anyone could in principle send requests to your webhook server, it’s important to implement some basic security steps to keep your webhooks safe. Here are some tips that can help reduce the risks:
+
+* Enable [TLS/SSL](docs/cli.md#--tlc-cert----tls-key) if the transmitted data is sensitive or if you wish to protect against replay attacks
+* Use [validation rules](docs/webhooks.md#validate) to verify that the requests originated from the expected source. For example:
+  * Enable HMAC based validation with the `hmac-sha1` match type
+  * Send a custom token in the payload or as a HTTP header which has to match `exactly`
+* [Obscurity](https://danielmiessler.com/study/security-by-obscurity/) *as a security layer*:
+  * Set hook paths which are not easy to guess
+  * Be creative with the HTTP method for the webhook
 
 ## License
+
 > Do whatever you want with it, but don't blame me for anything that goes wrong.
 
 MIT © [Daniel Stefanovic](http://twitter.com/danistefanovic)
