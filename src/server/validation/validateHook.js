@@ -26,6 +26,12 @@ const schema = joi.object().keys({
     }))
 });
 
+/**
+ * Validates a hook
+ * @param {Object} hook
+ * @return {void}
+ * @throws Will throw an error if the hook is invalid
+ */
 export default function validateHook(hook) {
     const result = joi.validate(hook, schema);
     if (result.error) {

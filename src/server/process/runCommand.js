@@ -1,6 +1,13 @@
 import { spawn } from 'child_process';
 import normalizeArgs from './normalizeArgs';
 
+/**
+ * Starts a child process
+ * @param {string} command The command to run
+ * @param {Object} options See https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options
+ * @param {Object} logger The log printer
+ * @return {Promise}
+ */
 export default function runCommand(command, options, logger) {
     const { file, args, defaultOptions } = normalizeArgs(command);
     const child = spawn(file, args, { ...defaultOptions, ...options });

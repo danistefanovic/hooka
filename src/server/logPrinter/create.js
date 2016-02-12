@@ -3,6 +3,11 @@ import { error } from './colors';
 
 const colors = colorGenerator();
 
+/**
+ * Creates the log printer
+ * @param {string} id
+ * @return {Object} log printer
+ */
 export default function create(id) {
     const color = colors.next().value;
 
