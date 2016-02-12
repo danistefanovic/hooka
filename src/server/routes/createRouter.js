@@ -2,9 +2,14 @@ import express from 'express';
 import registerHooks from './registerHooks';
 import registerMiddleware from './registerMiddleware';
 
-export default function createRouter(hooks, secret) {
+/**
+ * Creates the router
+ * @param {Array} hooks Hook entries
+ * @return {Object}
+ */
+export default function createRouter(hooks) {
     const router = express.Router();
-    registerMiddleware({ router, secret });
+    registerMiddleware({ router });
     registerHooks({ router, hooks });
     return router;
 }
