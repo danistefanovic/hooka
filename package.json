@@ -61,6 +61,7 @@
     "express": "4.13.3",
     "joi": "7.1.0",
     "lodash": "4.0.0",
+    "methods": "1.1.2",
     "source-map-support": "0.4.0",
     "yargs": "3.31.0"
   }
