@@ -57,7 +57,7 @@ $ npm install -g hooka
           ],
           "parseJson": [
               {
-                  "query": "payload.text",
+                  "query": "payload.hello",
                   "variable": "MESSAGE"
               }
           ]
@@ -77,7 +77,7 @@ $ npm install -g hooka
   $ curl \
       -H "Content-Type: application/json" \
       -X POST \
-      -d '{"text": "I love cupcakes", "token": "MySecret"}' \
+      -d '{"hello": "I love cupcakes", "token": "MySecret"}' \
       http://localhost:3000/hello-again
   ```
 
