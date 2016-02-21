@@ -14,7 +14,7 @@ export default function normalizeArgs(command) {
 function normalizeOnWindows(command) {
     return {
         file: process.env.comspec || 'cmd.exe',
-        args: ['/s', '/c', `"${command}"`],
+        args: ['/s', '/c', command],
         options: { windowsVerbatimArguments: true }
     };
 }
