@@ -1,12 +1,17 @@
 ## [HEAD]
 > Unreleased
 
+[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.0...HEAD
+
+## [v0.2.0]
+> Feb 21, 2016
+
 - Added `cwd` option to hooks config file ([#13])
 - Added TLS/SSL support ([#14])
 - Added functionality to pass JSON values to command via environment variables ([#17])
 - Added validation rules ([#19])
 
-[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.1.0...HEAD
+[v0.2.0]: https://github.com/danistefanovic/hooka/compare/v0.1.0...v0.2.0
 [#13]: https://github.com/danistefanovic/hooka/issues/13
 [#14]: https://github.com/danistefanovic/hooka/issues/14
 [#17]: https://github.com/danistefanovic/hooka/issues/17
