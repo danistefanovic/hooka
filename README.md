@@ -8,7 +8,7 @@
 [david-dm-url]:https://david-dm.org/danistefanovic/hooka
 [david-dm-image]:https://david-dm.org/danistefanovic/hooka.svg
 
-**[Work in progress] Hooka** is a webhook server written in Node, which allows you to easily create HTTP endpoints to trigger the execution of configured commands.
+**Hooka** is a webhook server written in Node, which allows you to easily create HTTP endpoints to trigger the execution of configured commands.
 
 ## Installation
 
