@@ -14,7 +14,7 @@ describe('normalizeArgs', () => {
         const result = normalizeArgs('echo Hello world');
         expect(result).toEqual({
             file: 'cmd.exe',
-            args: ['/s', '/c', '"echo Hello world"'],
+            args: ['/s', '/c', 'echo Hello world'],
             options: { windowsVerbatimArguments: true }
         });
     });
@@ -28,7 +28,7 @@ describe('normalizeArgs', () => {
         const result = normalizeArgs('echo Hello again');
         expect(result).toEqual({
             file: 'command.com',
-            args: ['/s', '/c', '"echo Hello again"'],
+            args: ['/s', '/c', 'echo Hello again'],
             options: { windowsVerbatimArguments: true }
         });
     });
