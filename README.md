@@ -35,6 +35,7 @@ $ npm install -g hooka
 ## Basic usage
 
 1. Create a `webhooks.json` file:
+   > **Windows users**: Replace `$MESSAGE`with `%MESSAGE%`
 
   ```json
   [
