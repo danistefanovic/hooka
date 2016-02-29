@@ -1,9 +1,17 @@
 ## [HEAD]
 > Unreleased
 
+- No changes
+
+[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.1...HEAD
+
+
+## [v0.2.1]
+> Feb 29, 2016
+
 - Fixed bug with not found command on Windows ([#20])
 
-[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.0...HEAD
+[v0.2.1]: https://github.com/danistefanovic/hooka/compare/v0.2.0...v0.2.1
 [#20]: https://github.com/danistefanovic/hooka/issues/20
 
 ## [v0.2.0]
