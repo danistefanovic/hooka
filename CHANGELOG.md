@@ -1,10 +1,19 @@
 ## [HEAD]
 > Unreleased
 
+- No changes
+
+[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.3.0...HEAD
+
+
+
+## [0.3.0]
+> Unreleased
+
 - Added Docker support ([#24], [#26])
 - Added `engines` to package.json ([#27])
 
-[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.1...HEAD
+[0.3.0]: https://github.com/danistefanovic/hooka/compare/v0.2.1...0.3.0
 [#24]: https://github.com/danistefanovic/hooka/issues/24
 [#26]: https://github.com/danistefanovic/hooka/issues/26
 [#27]: https://github.com/danistefanovic/hooka/issues/27
