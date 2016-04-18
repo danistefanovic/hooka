@@ -4,6 +4,9 @@
   "description": "A webhook server with zero coding",
   "bin": "bin/index.js",
   "main": "lib/server/index.js",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/danistefanovic/hooka.git"
