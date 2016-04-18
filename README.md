@@ -93,8 +93,7 @@ $ npm install -g hooka
 Replace `/path/to/webhooks.json` with the actual path to your webhooks JSON file.
 
 ```sh
-$ docker build --tag hooka .
-$ docker run --rm -v /path/to/webhooks.json:/src/webhooks.json -p 3000:3000 hooka
+$ docker run -v /path/to/webhooks.json:/src/webhooks.json -p 3000:3000 danistefanovic/hooka
 ```
 
 ## Security
@@ -114,5 +113,3 @@ Since anyone could in principle send requests to your webhook server, it’s imp
 > Do whatever you want with it, but don't blame me for anything that goes wrong.
 
 MIT © [Daniel Stefanovic](http://twitter.com/danistefanovic)
-
-
