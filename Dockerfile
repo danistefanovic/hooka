@@ -1,5 +1,6 @@
 FROM node:4.4
 MAINTAINER Daniel Stefanovic
+EXPOSE 3000
 WORKDIR /src
 
 COPY package.json .
