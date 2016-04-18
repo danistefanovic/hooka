@@ -88,6 +88,15 @@ $ npm install -g hooka
     <img src="media/screencast.gif" width="700" />
 </p>
 
+### With Docker
+
+Replace `/path/to/webhooks.json` with the actual path to your webhooks JSON file.
+
+```sh
+$ docker build --tag hooka .
+$ docker run --rm -v /path/to/webhooks.json:/src/webhooks.json -p 3000:3000 hooka
+```
+
 ## Security
 
 Since anyone could in principle send requests to your webhook server, it’s important to implement some basic security steps to keep your webhooks safe. Here are some tips that can help reduce the risks:
