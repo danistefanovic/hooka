@@ -1,9 +1,11 @@
 ## [HEAD]
 > Unreleased
 
-- No changes
+- Added Docker support ([#24], [#26])
 
 [HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.1...HEAD
+[#24]: https://github.com/danistefanovic/hooka/issues/24
+[#26]: https://github.com/danistefanovic/hooka/issues/26
 
 
 ## [v0.2.1]
@@ -13,6 +15,7 @@
 
 [v0.2.1]: https://github.com/danistefanovic/hooka/compare/v0.2.0...v0.2.1
 [#20]: https://github.com/danistefanovic/hooka/issues/20
+
 
 ## [v0.2.0]
 > Feb 21, 2016
@@ -27,6 +30,7 @@
 [#14]: https://github.com/danistefanovic/hooka/issues/14
 [#17]: https://github.com/danistefanovic/hooka/issues/17
 [#19]: https://github.com/danistefanovic/hooka/issues/19
+
 
 ## [v0.1.0]
 > Jan 17, 2016
