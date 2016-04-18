@@ -8,7 +8,7 @@
 
 
 ## [0.3.0]
-> Unreleased
+> Apr 18, 2016
 
 - Added Docker support ([#24], [#26])
 - Added `engines` to package.json ([#27])
