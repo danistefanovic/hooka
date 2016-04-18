@@ -2,10 +2,12 @@
 > Unreleased
 
 - Added Docker support ([#24], [#26])
+- Added `engines` to package.json ([#27])
 
 [HEAD]: https://github.com/danistefanovic/hooka/compare/v0.2.1...HEAD
 [#24]: https://github.com/danistefanovic/hooka/issues/24
 [#26]: https://github.com/danistefanovic/hooka/issues/26
+[#27]: https://github.com/danistefanovic/hooka/issues/27
 
 
 ## [v0.2.1]
