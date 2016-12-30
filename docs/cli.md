@@ -24,7 +24,7 @@ Set a custom port.
 $ hooka --port 1337
 ```
 
-### --tlc-cert & --tls-key
+### --tls-cert & --tls-key
 
 Enable secure connections via HTTPS.
 
