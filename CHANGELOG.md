@@ -3,8 +3,16 @@
 
 - No changes
 
-[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.3.0...HEAD
+[HEAD]: https://github.com/danistefanovic/hooka/compare/v0.4.0...HEAD
 
+
+## [0.4.0]
+> Feb 04, 2018
+
+- Support tilde paths in "cwd" option ([#30])
+
+[0.4.0]: https://github.com/danistefanovic/hooka/compare/v0.3.0...0.4.0
+[#30]: https://github.com/danistefanovic/hooka/issues/30
 
 
 ## [0.3.0]
