@@ -66,6 +66,7 @@
     "lodash": "4.0.0",
     "methods": "1.1.2",
     "source-map-support": "0.4.0",
+    "untildify": "3.0.2",
     "yargs": "3.31.0"
   }
 }

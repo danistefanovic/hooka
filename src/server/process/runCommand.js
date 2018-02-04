@@ -1,4 +1,6 @@
 import { spawn } from 'child_process';
+import _ from 'lodash';
+import untildify from 'untildify';
 import normalizeArgs from './normalizeArgs';
 
 /**
@@ -10,7 +12,11 @@ import normalizeArgs from './normalizeArgs';
  */
 export default function runCommand(command, options, logger) {
     const { file, args, defaultOptions } = normalizeArgs(command);
-    const child = spawn(file, args, { ...defaultOptions, ...options });
+    const child = spawn(file, args, {
+        ...defaultOptions,
+        ...options,
+        cwd: _.get(options, 'cwd') ? untildify(options.cwd) : undefined
+    });
 
     return new Promise((resolve, reject) => {
         child.stdout.on('data', handleStdout.bind(null, logger));

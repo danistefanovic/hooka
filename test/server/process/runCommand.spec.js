@@ -61,4 +61,14 @@ describe('runCommand', () => {
         expect(spawn.calls.count()).toBe(1);
         expect(spawn.calls.argsFor(0)[2]).toEqual(options);
     });
+
+    it('should convert a tilde path to an absolute path', () => {
+        const options = { cwd: '~/test' };
+        const spawn = jasmine.createSpy('spawn');
+        rewireAPI.__Rewire__('spawn', spawn);
+        runCommand('dosomething', options);
+        expect(spawn.calls.count()).toBe(1);
+        expect(spawn.calls.argsFor(0)[2].cwd).not.toEqual('~/test');
+        expect(spawn.calls.argsFor(0)[2].cwd).toMatch(/^.+\/test$/);
+    });
 });
