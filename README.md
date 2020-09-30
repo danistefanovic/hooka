@@ -10,6 +10,8 @@
 
 **Hooka** is a webhook server written in Node, which allows you to easily create HTTP endpoints to trigger the execution of configured commands.
 
+**Webhook** is a way for an app to provide other applications with real time information.
+
 ## Installation
 
 ```
